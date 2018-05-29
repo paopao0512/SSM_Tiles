@@ -10,6 +10,7 @@ public interface Dao {
 	int queryWork(int isWork);
 	List<Student> queryGood(int isGood);
 	/*Student queryGood(int isGood);*/
-	TypeClass queryDirection(String direction);
+	/*TypeClass queryDirection(String direction);*/
+	List<TypeClass> queryDirection (String direction);
 	int queryType(String type);
 }

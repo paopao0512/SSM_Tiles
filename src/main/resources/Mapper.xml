@@ -16,7 +16,7 @@
     </select>
 
     <select id="queryDirection" parameterType="String" resultType="com.mvc.model.TypeClass">
-        select * from class where direction=#{direction} LIMIT 1;
+        select * from class where direction=#{direction} LIMIT 6;
     </select>
 
     <select id="queryType" parameterType="String" resultType="int">

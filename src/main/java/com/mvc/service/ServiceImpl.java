@@ -22,8 +22,12 @@ public class ServiceImpl implements PersonService{
 	public Student queryGood(int isGood){
 		return dao.queryGood(isGood);
 	}*/
-	@Override
+	/*@Override
 	public TypeClass queryDirection(String direction){
+		return dao.queryDirection(direction);
+	}*/
+	@Override
+	public List<TypeClass> queryDirection (String direction){
 		return dao.queryDirection(direction);
 	}
 	@Override

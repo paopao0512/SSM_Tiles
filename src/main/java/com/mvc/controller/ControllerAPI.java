@@ -32,11 +32,15 @@ public class ControllerAPI {
 	}
 	@RequestMapping(value = "/pro")
 	public String profession(Model model)throws Exception{
-		TypeClass typeClass = personService.queryDirection("前端");
+		List<TypeClass> typeClass = personService.queryDirection("前端");
+		List<TypeClass> typeClass1 = personService.queryDirection("后端");
 		int student = personService.queryType("WEB");
+		int student1 = personService.queryType("JAVA");
 		System.out.println(typeClass+"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
-		model.addAttribute("items",typeClass);
+		model.addAttribute("items2",typeClass);
+		model.addAttribute("items1",typeClass1);
 		model.addAttribute("item",student);
+		model.addAttribute("item1",student1);
 		return "profession";
 	}
 }

@@ -10,6 +10,7 @@ public interface PersonService {
 	int queryWork(int isWork)throws Exception;
 	List<Student> queryGood(int isGood)throws Exception;
 	/*Student queryGood(int isGood)throws Exception;*/
-	TypeClass queryDirection(String direction)throws Exception;
+	/*TypeClass queryDirection(String direction)throws Exception;*/
+	List<TypeClass> queryDirection (String direction) throws Exception;
 	int queryType(String type)throws Exception;
 }
