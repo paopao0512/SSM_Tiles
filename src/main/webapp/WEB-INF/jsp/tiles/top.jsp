@@ -8,6 +8,7 @@
                 <a href="#" target="_blank"> <img alt=""  src="${pageContext.request.contextPath}/data/imges/54537.png"></a>
                 <a href="#" target="_blank"><img alt=""  src="${pageContext.request.contextPath}/data/imges/45678678.png"></a>
                 <a href="#" target="_blank"> <img alt=""  src="${pageContext.request.contextPath}/data/imges/54375483543.png"></a>
+                <a href="${pageContext.request.contextPath}/logout" style="color: black">退出</a>
             </div>
         </div>
     </div>

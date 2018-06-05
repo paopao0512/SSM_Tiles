@@ -23,4 +23,17 @@
         SELECT COUNT(type) FROM student
             where type=#{type};
     </select>
+
+    <select id="queryUser" parameterType="String" resultType="com.mvc.model.User">
+        select ID,password from user where
+                    userName=#{userName};
+    </select>
+
+    <select id="queryID" parameterType="String" resultType="com.mvc.model.User">
+        select * from user where ID=#{ID};
+    </select>
+
+    <insert id="addUser" parameterType="com.mvc.model.User" useGeneratedKeys="true" keyProperty="ID">
+        insert into user (userName,password,phone,email) value (#{userName},#{password},#{phone},#{email})
+    </insert>
 </mapper>
