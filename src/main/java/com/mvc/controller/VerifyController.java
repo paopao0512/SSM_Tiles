@@ -60,7 +60,7 @@ public class VerifyController {
 				/*HttpSession session = request.getSession();
 				session.getId();
 				session.setAttribute("id", in.getID());*/
-				return "redirect:/rest/home";
+				return "redirect:/home";
 			}
 		}
 		return "redirect:index";

@@ -24,15 +24,30 @@
     <!-- 4.配置tiles的静态资源 -->
     <mvc:resources mapping="/data/**" location="/WEB-INF/data/"/>
 
-    <!-- 配置拦截器 -->
+    <!-- 5.配置拦截器 -->
     <mvc:interceptors>
-        <!-- 多个拦截器，按顺序执行 -->
+        <!-- 配置登陆拦截器 -->
         <mvc:interceptor>
-            <mvc:mapping path="/**"/> <!-- 拦截所有的url包括子url路径 -->
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/**/fonts/*"/>
+            <mvc:exclude-mapping path="/**/*.css"/>
+            <mvc:exclude-mapping path="/**/*.js"/>
+            <mvc:exclude-mapping path="/**/*.png"/>
+            <mvc:exclude-mapping path="/**/*.gif"/>
+            <mvc:exclude-mapping path="/**/*.jpg"/>
+            <mvc:exclude-mapping path="/**/*.jsp"/>
+            <mvc:exclude-mapping path="/**/*.jpeg"/>
+            <mvc:exclude-mapping path="/**/*login*"/>
+            <mvc:exclude-mapping path="/**/*Login*"/>
             <bean class="com.mvc.intercept.LoginInterceptor"/>
         </mvc:interceptor>
-        <!-- 多个拦截器，按顺序执行 -->
-        <!--<mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!-- 配置拦截器 -->
+    <!-- 多个拦截器，按顺序执行 -->
+    <!--<mvc:interceptors>
+        <mvc:interceptor>
             <mvc:mapping path="/**"/> &lt;!&ndash; 表示拦截所有的url包括子url路径 &ndash;&gt;
             <bean class="com.mvc.intercept.HandlerInterceptor1"/>
         </mvc:interceptor>
@@ -43,8 +58,8 @@
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean class="com.mvc.intercept.HandlerInterceptor3"/>
-        </mvc:interceptor>-->
-    </mvc:interceptors>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
 
     <!--4.配置jsp 显示ViewResolver(配置视图解析器)-->
     <!-- 引入tiles之后，使用tiles的视图解析器 -->
@@ -56,7 +71,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>-->
 
-    <!-- 5.自定义Spring参数绑定 -->
+    <!-- 6.自定义Spring参数绑定 -->
     <bean id="conversionService"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <!-- 转换器 -->
@@ -67,11 +82,11 @@
         <!-- 转换器end-->
     </bean>
 
-    <!-- 6.添加Controller切面 -->
+    <!-- 7.添加Controller切面 -->
     <aop:aspectj-autoproxy />
     <bean name="timeController" class="com.mvc.aop.TimeController"/>
 
-    <!-- 7.tiles配置路径 -->
+    <!-- 8.tiles配置路径 -->
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
             <list>
@@ -80,7 +95,7 @@
         </property>
     </bean>
 
-    <!-- 8.tiles视图解释类 -->
+    <!-- 9.tiles视图解释类 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView">
         </property>
